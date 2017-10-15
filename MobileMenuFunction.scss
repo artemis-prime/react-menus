@@ -1,0 +1,60 @@
+$sidebar-menu-animation-duration: 0.02s;
+$sidebar-menu-left-position: 90vw;
+
+.outermost {
+
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+
+	#non-slide-pane-outer {
+		position: relative;
+		right: 0;
+		height: 100%;
+		transition: right $sidebar-menu-animation-duration;
+		transition: left $sidebar-menu-animation-duration;
+	}
+
+	&.menu-not-visible {
+
+		#mobile-menu {
+			visibility: hidden; // just a precaution
+			left : 100vw; 		// for transition animation
+		}
+
+		#slide-pane-helper {
+			display: none;
+		}
+	}
+
+	&.menu-visible {
+
+		#non-slide-pane-outer {
+			position: relative;
+			right: $sidebar-menu-left-position;
+		}
+
+		#mobile-menu {
+			visibility: visible;
+			transition: left $sidebar-menu-animation-duration;
+			width: $sidebar-menu-left-position;
+			position: absolute;
+			top: 0;
+			left: (100vw - $sidebar-menu-left-position);
+			height: 100vh;
+			z-index: 100;
+		}
+
+		#slide-pane-helper {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #333;
+			opacity: 0.6;
+			z-index: 5;
+		}
+	}
+}
