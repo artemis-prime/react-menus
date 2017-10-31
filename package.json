@@ -1,6 +1,6 @@
 {
   "name": "@artemis-prime/react-menus",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "react menu components",
   "main": "index.js",
   "scripts": {},
@@ -20,6 +20,6 @@
   "homepage": "https://github.com/artemis-prime/react-menus#readme",
   "dependencies": {
     "react": "^16.0.0",
-    "react-hammerjs": "^0.5.0"
+    "react-hammerjs": "^1.0.1"
   }
 }
