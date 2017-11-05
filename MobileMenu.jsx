@@ -1,11 +1,9 @@
 const React 	= require('react');
-const Hammer 	= require('react-hammerjs');
-
 const u 		= require('./swipe-helper');
 const Menu		= require("./Menu.jsx");
+//const Hammer	= require('react-hammerjs');
 
-
-//require	('./MobileMenuFunction.scss');
+require	('./MobileMenuFunction.scss');
 
 class MobileMenu extends React.Component {
 
@@ -23,13 +21,16 @@ class MobileMenu extends React.Component {
 		let className = (this.props.className) ? "mobile " + this.props.className : "mobile";
 
 		return(
-			<Hammer onSwipe={this.swiped.bind(this)}>
-				<Menu className={className} id="mobile-menu">
-					{this.props.children}
-				</Menu>
-			</Hammer>
+			<Menu className={className} id="mobile-menu">
+				{this.props.children}
+			</Menu>
 		);
 	}
 }
+
+/*
+<Hammer onSwipe={this.swiped.bind(this)}>
+</Hammer>
+*/
 
 module.exports = MobileMenu;
